@@ -98,6 +98,9 @@ nav ul li {
 }
 .card-container {
   padding: 5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .card {
   position: relative;
@@ -105,18 +108,21 @@ nav ul li {
   color: #fff;
   /* padding: 1rem; */
   height: 15rem;
-  width: 12rem;
+  width: 15rem;
   border-radius: 10px;
   overflow: hidden;
 }
 .title {
+  height: 4rem;
   background-color: #222;
   padding: 1rem;
-  overflow-x: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 .desc {
   padding: 0.5rem 1rem;
   overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .students {
   position: absolute;
