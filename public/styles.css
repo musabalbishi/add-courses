@@ -12,6 +12,16 @@ body {
   padding: 1rem;
   height: 100vh;
 }
+.header-main-text {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header h1 {
+  font-size: 3rem;
+}
 .header-text {
   padding-top: 1rem;
   font-size: 1.4rem;
@@ -81,10 +91,18 @@ body {
 nav ul {
   display: flex;
   list-style: none;
+  margin: 1rem;
 }
 
 nav ul li {
   padding: 0 1rem;
+}
+nav ul li a:link,
+nav ul li a:active,
+nav ul li a:visited {
+  text-decoration: none;
+  color: #222;
+  font-weight: 700;
 }
 /*  */
 .course-header {
@@ -96,20 +114,25 @@ nav ul li {
 .course-header h1 {
   color: #fff;
 }
+.card-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-container {
   padding: 5rem;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 .card {
   position: relative;
   background-color: lightgray;
   color: #fff;
-  /* padding: 1rem; */
   height: 15rem;
   width: 15rem;
   border-radius: 10px;
+  margin: 1rem;
   overflow: hidden;
 }
 .title {

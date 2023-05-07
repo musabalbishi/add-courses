@@ -31,20 +31,22 @@
       />
     </header>
     <!--  -->
+    <section class="card-section">
     <div class="card-container">
       <% for(let i = 0; i<all.length; i++) {%>
-      <div class="card">
-        <p class="title"><%= all[i]['course']%></p>
-        <p class="desc"><%= all[i]['desc']%></p>
-        <div class="students">
-          <div class="students-num">
-            <ion-icon name="people" class="icons"></ion-icon>
-            <p class="stu-num"><%= all[i]['student']%></p>
+        <div class="card">
+          <p class="title"><%= all[i]['course']%></p>
+          <p class="desc"><%= all[i]['desc']%></p>
+          <div class="students">
+            <div class="students-num">
+              <ion-icon name="people" class="icons"></ion-icon>
+              <p class="stu-num"><%= all[i]['student']%></p>
+            </div>
+            <ion-icon name="add-outline" class="icons"></ion-icon>
           </div>
-          <ion-icon name="add-outline" class="icons"></ion-icon>
         </div>
+        <% } %>
       </div>
-      <% } %>
-    </div>
+    </section>
   </body>
 </html>
