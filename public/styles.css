@@ -135,6 +135,14 @@ nav ul li a:visited {
   margin: 1rem;
   overflow: hidden;
 }
+.delete {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 0;
+  right: 0;
+  color: red;
+}
 .title {
   height: 4rem;
   background-color: #222;

@@ -37,15 +37,18 @@
         <div class="card">
           <p class="title"><%= all[i]['course']%></p>
           <p class="desc"><%= all[i]['desc']%></p>
+          <!-- <a href="#"><ion-icon name="trash-outline" class="delete"></ion-icon></a> -->
           <div class="students">
             <div class="students-num">
               <ion-icon name="people" class="icons"></ion-icon>
               <p class="stu-num"><%= all[i]['student']%></p>
             </div>
-            <ion-icon name="add-outline" class="icons"></ion-icon>
+            <a href="/details"><ion-icon name="add-outline" class="icons"></ion-icon></a>
           </div>
         </div>
         <% } %>
+      </div>
+      
       </div>
     </section>
   </body>
