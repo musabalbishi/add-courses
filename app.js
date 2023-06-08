@@ -2,13 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const parser = require("body-parser");
 const path = require("path");
-
+const dotenv = require("dotenv").config();
 mongoose
-  .connect(
-    // "mongodb+srv://mosabalbishi:musab123m@cluster0.xsllfeu.mongodb.net/?retryWrites=true&w=majority",
-    // { AUTHENTICATION_DATABASE: null }
-    "mongodb://0.0.0.0:27017/twuiq"
-  )
+  .connect(process.env.DB_URI)
   .then(() => {
     console.log("connected");
   })
@@ -54,12 +50,17 @@ app.get("/courses", async (req, res) => {
 });
 
 //
-// app.get("/details", async (req, res) => {
-//   const results = await User.find();
-//   for (let i = 0; i < results.length; i++) {
-//     res.render("details.ejs", { details: results[i] });
-//   }
-// });
+app.get("/details/:id", async (req, res) => {
+  const ccid = req.query.id;
+  const cid = User.findById({ cdetails: ccid })
+    .then((c) => {
+      res.render("details.ejs", { cc: c });
+    })
+    .catch((e) => {
+      res.send(e.message);
+    });
+  // const user = User;
+});
 // READ
 app.get("/courses/:cname", (req, res) => {
   const cname = req.params.cname;
@@ -75,9 +76,13 @@ app.get("/courses/:cname", (req, res) => {
 // DELETE
 app.get("/deleteCourses", (req, res) => {
   const courseName = req.query.course;
-  User.deleteOne({ course: courseName }).then(() => {
-    res.send(`${courseName} has been deleted`);
-  });
+  User.deleteOne({ course: courseName })
+    .then(() => {
+      res.send(`${courseName} has been deleted`);
+    })
+    .catch((e) => {
+      console.log(e.message);
+    });
 });
 // UPDATE --> use querey parameter
 app.get("/updateCourse/:cname", (req, res) => {
